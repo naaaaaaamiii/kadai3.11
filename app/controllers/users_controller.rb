@@ -8,6 +8,12 @@ class UsersController < ApplicationController
   def edit
   end
   
+  def index
+    @user = current_user
+    @book = Book.new
+    @users = User.all
+  end
+  
 
   private
    def list_params

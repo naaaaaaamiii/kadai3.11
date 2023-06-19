@@ -1,0 +1,48 @@
+<body>
+  <main>
+    <h1>User info</h1>
+    <div>
+      <%= image_tag @user.get_profile_image(100,100) %></br>
+      
+      <strong> name </strong>  <%= @user.name %></br>
+      
+      <strong>introduction </strong> <%= @user.introduction %>
+      
+        <h1>New book</h1>
+          <%= form_with model: @book do |f| %>
+        <p>Title</p>
+          <%= f.text_field :title %>
+      
+   　    <p>Option</p>
+          <%= f.text_area :body %><br>
+          <%= f.submit 'Create Book' %>
+        
+     <% end %>
+         
+         <!--ここから右側　-->
+         
+      <h1>Users</h1>
+        <table>
+           <thead>
+            <tr>
+             <th></th>
+             <th>Name</th>
+             <th colspan="1"></th>
+            </tr>
+           </thead>
+
+           <tbody>
+            <% @users.each do |user| %>
+             <tr>
+              <td><%=  image_tag @user.get_profile_image(80,80) %></td>
+              <td> <%= @user.name %> </td>
+              <td><%=link_to "show " %></td>
+             </tr>
+            <% end %>
+           </tbody>
+        </table>   
+         
+         
+    </div>
+  </main>
+</body>
