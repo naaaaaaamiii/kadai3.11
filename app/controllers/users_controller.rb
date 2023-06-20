@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @books = @user.books
   end
 
-  def edit
+  def edit 
   end
   
   def index
