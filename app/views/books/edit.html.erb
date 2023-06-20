@@ -1,27 +1,30 @@
 <body>
   <main>
-     <h1>Editing Book</h1>
-
-       <%= form_with model: @book, url:update_book_path(@book.id), method: :patch do |f| %>
+   <div class="container">
+    <div class="row">
+     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+        <h1>Editing Book</h1>
+           <%= form_with model: @book, method: :patch do |f| %>
 
              <div class = "field">
-             <label for = "book_title">Title</label>
-               <%= f.text_area :title %>
-             <label for = "book_body">Option</label>
-               <%= f.text_fild :body %>
+             <label for = "book_title">Title</label></br>
+               <%= f.text_field :title %>
+             </div>
+               
+             <div class ="field">
+             <label for = "book_body">Option</label></br>
+               <%= f.text_area :body %>
              </div>
              
-
              <div class = "submit">
-               <%= f.submit ' Update Book ' %>
+               <input type="submit" name="commit" value="Update Book" class="btn btn-success" data-disable-with="Update Book">
              </div>
+               <a class="show" href="/books:id">Show</a>
+               <a class="back" href="/books">Back</a>
 
-              <%= link_to "Show", book_path(@book.id) %>
-              <%= link_to "Back",:books %>
-
-       <% end %>
-
+                <% end %>
+     </div>
+    </div>
+   </div>
   </main>
-</body>
-
-
+ </body>
