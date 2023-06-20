@@ -23,10 +23,10 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
-             
+      
             <% if user_signed_in? %>
             <li class="nav-item">
-                <%= link_to 'Home', user_path(@user), class:"fas fa-home" %>    
+                <%= link_to 'Home', user_path(current_user.id), class:"fas fa-home" %>    
             </li>
             <li class="nav-item">
                 <%= link_to 'Users', users_path, class:"fas fa-users" %>
@@ -52,6 +52,7 @@
                 <%= link_to "Log in", new_user_session_path, class:"fas fa-sign-in-alt" %>
             </li>
             <% end %>
+            </nav>
           </div>
          </nav>
         </header>

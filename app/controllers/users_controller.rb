@@ -20,6 +20,7 @@ class UsersController < ApplicationController
     redirect_to user_show_path(@user)
   end
   
+ 
 
   private
    def list_params
