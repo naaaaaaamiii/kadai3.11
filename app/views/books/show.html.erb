@@ -52,8 +52,10 @@
                  <th><%=  image_tag @user.get_profile_image(80,80) %></th>
                  <th><%=link_to @book.title, book_path(@book.id) %></th>
                  <th><%= @book.body %> </th>
+                 <!--% if @book.user == current_user %-->
                  <th><a class="btn btn-sm btn-success edit_book_id" href="/books/id/edit">Edit</a></th>
                  <th><a data-confirm="本当に消しますか？" class="btn btn-sm btn-danger destroy_book_id" rel="nofollow" data-method="delete" href="/books/id">Destroy</a></th>
+                 <!--% end %-->
                 </tr>
                </tbody>
               </thead>
