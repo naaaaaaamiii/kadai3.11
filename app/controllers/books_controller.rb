@@ -8,7 +8,7 @@ class BooksController < ApplicationController
      @book = Book.new(book_params)
      @book.user_id = current_user.id
      @book.save
-     redirect_to books_path(@book.user_id)
+     redirect_to user_path(current_user.id)
   end
 
   def index
@@ -25,14 +25,22 @@ class BooksController < ApplicationController
 
   def edit
      @book = Book.find(params[:id])
-     
+
   end
-  
- # def destroy
-  #  book = Book.find(params{:id})
-   # book.destroy
-    #redirect_to books_path
-#  end
+
+  def destroy
+    book = Book.find(params[:id])
+    book.destroy
+    redirect_to user_path(current_user.id)
+  end
+
+  def update
+    book = Book.find(params{:id})
+    book.update (book.params)
+    redirect_to user_path(current_user.id)
+  end
+
+
 
   private
 

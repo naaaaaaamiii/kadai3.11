@@ -17,12 +17,16 @@
              </div>
              
              <div class = "submit">
-               <input type="submit" name="commit" value="Update Book" class="btn btn-success" data-disable-with="Update Book">
+               <%= link_to book_path(current_user.id), method: :patch, class:"btn btn-success" do %>
+               <p>Update Book</p>
+               <% end %>
              </div>
-               <a class="show" href="/books:id">Show</a>
+            
+               <a class="show" href="/books/:id">Show</a>
                <a class="back" href="/books">Back</a>
+            <% end %>
 
-                <% end %>
+                
      </div>
     </div>
    </div>
