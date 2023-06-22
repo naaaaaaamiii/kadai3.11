@@ -4,6 +4,16 @@
     <div class="row">
      <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
         <h1>Editing Book</h1>
+          <h3>
+            <% if @book.errors.any? %>
+              <%= @book.errors.count %>error!!!!!!!!!!!
+                <ul>
+                  <% @book.errors.full_messages.each do |message| %>
+                   <li><%= message %></li>
+                  <% end %>
+                </ul>
+             <% end %>
+           </h3>
            <%= form_with model: @book, url: book_path(@book) ,method: :patch do |f| %>
 
              <div class = "field">
@@ -21,10 +31,9 @@
                 <!--class:"btn btn-success" -->
              </div>
             <% end %>
-
-               <a class="show" href="/books/:id">Show</a>
-               <a class="back" href="/books">Back</a>
-
+               <%= link_to "Show", book_path(@book) %>
+               <%= link_to "Back", books_path %>
+              
 
 
      </div>
