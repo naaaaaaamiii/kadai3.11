@@ -27,12 +27,12 @@
            </div>
 
            <h2 class="mt-3">New book</h2>
-            <%= form_with model: @book do |f| %>
+            <%= form_with model: @book_new do |f| %>
              <p>Title</p>
               <%= f.text_field :title %>
    　         <p>Option</p>
               <%= f.text_area :body %><br>
-             <input type="submit" name="commit" value="Create Book" class="btn btn-success" data-disable-with="Create Book">
+              <%= f.submit 'Create Book' %>
             <% end %>
       </div>
 
