@@ -21,9 +21,9 @@
                 </div>
           
                 <div class="form-group">
-                  <%=link_to user_path(current_user),method: :update,class:"btn btn-secondary" do %>
-                    Update User
-                  <% end %>
+                  <%= f.submit 'Update User' %>
+                  <!--class:"btn btn-secondary"-->
+
                 </div>
               <% end %>
         </div>
