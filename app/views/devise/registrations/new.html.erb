@@ -1,4 +1,14 @@
 <h2>Sign up</h2>
+  <h3>
+     <% if @user.errors.any? %>
+       <%= @user.errors.count %>error!!!!!!!!!!!
+         <ul>
+           <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+           <% end %>
+          </ul>
+      <% end %> 
+  </h3>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
