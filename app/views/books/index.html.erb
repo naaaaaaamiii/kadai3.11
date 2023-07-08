@@ -44,6 +44,7 @@
                     </th>
                     <th><%=link_to book.title, book_path(book) %></th>
                     <th> <%= book.body %> </th>
+                    <th><%= render'favorites/favorite', book: book %></th>
                    </tr>
                    <% end %>
                   </tbody>
